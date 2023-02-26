@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    
+    <div class="card-deck">
+      <div class="card" *ngFor="let personagem of personagens">
+        <img src="{{ personagem.avatar }}" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title" style="text-align: center;">{{ personagem.nome }}</h2>
+          <p *ngIf="showDetails || showHabilidade" class="card-text" style="text-align: center;">Habilidade: {{ personagem.habilidade }}</p>
+          <p *ngIf="showDetails" class="card-text" style="text-align: center;">Planeta: {{ personagem.planeta }}</p>
+          <p *ngIf="showDetails" class="card-text" style="text-align: center;">Armas: {{ personagem.armas }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  
+  <button class="glow-on-hover" (click)="Details()">Trazer todos os dados</button>
+  <button class="glow-on-hover" (click)="Habilidade()">Habilidades</button>
+  
+</div>
